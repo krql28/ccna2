@@ -2,7 +2,7 @@ Design and configure realworld lab for this diagram:
 
 ![image](https://github.com/user-attachments/assets/53e9a9a8-18a7-4c07-b13b-02460f26a0bf)
 
-Task1: For ARMY.ML.PH
+Task1: For ARMY.MIL.PH
 10.0.0.0 subnet to 4500:
 c: 4500 is 13bits
 s:/32 - /13 = /19; 3rd octet, 32i
@@ -14,17 +14,17 @@ Not ARMY: 10.0.64.0 /19
 ##CoreDelta1
 config t
 vlan 21
- name ARMY.ML.PH
+ name ARMY.MIL.PH
  exit
 Int vlan 21
  IP ospf 1 area 0
  no shut
  ip add 10.0.32.1 255.255.224.0
 ip dhcp excluded-add 10.0.32.1 10.0.32.100
-ip dhcp pool ARMY.ML.PH
+ip dhcp pool ARMY.MIL.PH
  network 10.0.32.0 255.255.224.0
  default-router 10.0.32.1
- domain-name ARMY.ML.PH
+ domain-name ARMY.MIL.PH
  dns-server 10.41.1.10
  option 150 ip 10.41.100.8
 ( Int Fa 0/5
