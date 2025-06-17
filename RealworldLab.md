@@ -27,9 +27,9 @@ ip dhcp pool SKYESasia.COM
  domain-name SKYESasia.COM
  dns-server 10.41.1.10
  option 150 ip 10.41.100.8
- Int Fa 0/5
+( Int Fa 0/5
   swi Voice vlan 11
-  do sh ip dhcp binding
+  do sh ip dhcp binding) ##include if this is set up with physically
 
   AlacessSW:
   conf t
@@ -45,7 +45,7 @@ ip dhcp pool SKYESasia.COM
   ip address dhcp
   do bp
 
-For 2900 
+For 2900 TELUS
 
   ##CoreDelta2
 config t
@@ -64,7 +64,6 @@ ip dhcp pool TELUS.COM
  dns-server 10.41.1.10
  option 150 ip 10.41.100.8
  
-
   AlacessSW:
   conf t
   int e1/0
