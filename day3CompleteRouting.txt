@@ -416,28 +416,40 @@ TASK5: ROUTING: static,eigrp,ospf,BGP vs
 config T
 no logging console
 no ip domain-lookup
+line vty 0 14
+transport input all
 int gi 1
-ip add dhcp
+ip add 208.8.8.12 255.255.255.0
 no shut
 int gi 2
-ip add dhcp
+ip add 192.168.102.12 255.255.255.0
+no shut
+int gi3
+ip add 20.20.20.1 255.255.255.0
+no shut
+@VPNphp: VPN for Philippines
+config T
+no logging console
+no ip domain-lookup
+line vty 0 14
+transport input all
+int gi 1
+ip add 288.8.8.11 255.255.255.0
+no shut
+int gi 2
+ip add 192.168.102.11
 no shut
 int gi3
 ip add 10.10.10.1 255.255.255.0
 no shut
-@VPNphp:
-config T
-no logging console
-no ip domain-lookup
-int gi 1
-ip add dhcp
-no shut
-int gi 2
-ip add dhcp
-no shut
-int gi3
-ip add 10.20.20.1 255.255.255.0
-no shut
+
+@BUILDING JAPAN ONLY
+sudo ifconfig eth0 20.20.20.20 netmask 255.255.255.0 up
+sudo route add default gw 20.20.20.1
+
+@BUILDING PHILIPPINES ONLY
+sudo ifconfig eth0 10.10.10.10 netmask 255.255.255.0 up
+sudo route add default gw 10.10.10.1
 
 TASK6: LALABASA SA EXAM NYO SA FEB/MARCH
 HOW TO CONFIGURE SSHv2. or SecureShell
