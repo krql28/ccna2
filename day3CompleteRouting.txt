@@ -414,6 +414,7 @@ TASK5: ROUTING: static,eigrp,ospf,BGP vs
        TUNNELING: VPN:
 @VPNJP:
 config T
+ip route 0.0.0.0 0.0.0.0 208.8.8.2
 no logging console
 no ip domain-lookup
 line vty 0 14
@@ -427,17 +428,19 @@ no shut
 int gi3
 ip add 20.20.20.1 255.255.255.0
 no shut
+
 @VPNphp: VPN for Philippines
 config T
+ip route 0.0.0.0 0.0.0.0 208.8.8.2
 no logging console
 no ip domain-lookup
 line vty 0 14
 transport input all
 int gi 1
-ip add 288.8.8.11 255.255.255.0
+ip add 208.8.8.11 255.255.255.0
 no shut
 int gi 2
-ip add 192.168.102.11
+ip add 192.168.102.11 255.255.255.0
 no shut
 int gi3
 ip add 10.10.10.1 255.255.255.0
