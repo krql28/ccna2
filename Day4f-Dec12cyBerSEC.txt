@@ -504,10 +504,12 @@ bldg1:
 sudo su
 ifconfig eth0 192.168.103.21 netmask 255.255.255.0 up
 route add default gw 192.168.103.11
+ping 192.168.103.11
 bldg2:
 sudo su
 ifconfig eth0 192.168.103.22 netmask 255.255.255.0 up
 route add default gw 192.168.103.11
+ping 192.168.103.11
 bldg3:
 sudo su
 ifconfig eth0 192.168.103.23 netmask 255.255.255.0 up
@@ -518,7 +520,7 @@ ping 8.8.8.8   1.1.1.1  4.2.2.2  8.8.4.4
 TASK9: NAT: NETWORK ADDRESS TRANSLATION SERVICE: BIGAY INTERNET/ ITAGO ANG TOTOONG IP ADDRESS./1500
 nat, proxy, hotspot, tethering, = PENGE INTERNET
 Give Internet to your Entire building USING CISCO:
-insideLocal            outsideLocal
+insideLocal(private)  outsideLocal(public)
 192.168.103.21        208.8.8.51
 192.168.103.22        208.8.8.52
 192.168.103.23        bahala Na si batman
