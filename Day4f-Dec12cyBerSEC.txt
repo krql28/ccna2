@@ -115,39 +115,48 @@ end
 
 Task1.2: block admu.edu.ph, dlsu.edu.ph, ccp.edu.ph, ue.edu.ph
 
-ping www.dlsu.edu.ph 172.67.14.0   104.22.36.0
+ping www.dlsu.edu.ph 172.67.14.0  104.22.36.0
 ping www.ccp.edu.ph 50.6.160.0     
 ping www.feu.edu.ph 184.168.125.0  
 ping  www.ue.edu.ph 155.137.92.0  
-ping  www.yourschool.edu.ph = _________
+ping  www.tip.edu.ph = 104.22.2.0
 config t
 NO ip access-list standard NOISKUL
 ip access-list standard NOISKUL
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
+DENY   172.67.14.0   0.0.255.255
+DENY   50.6.160.0   0.0.255.255
+DENY   184.168.125.0   0.0.255.255
+DENY   155.137.92.0   0.0.255.255
+DENY   104.22.2.0   0.0.255.255
 Permit Any
 Int Gi 1
  ip access-group NOISKUL in
 end
+
+unblocked
+config t
+Int gi 1
+ NO ip access-group NOISKUL in
+end
+
 YOUR COMPANY IS HAS VERY LOW INTERNET SPEED, BEC OF TORRENTS:
-www.thepiratebay.org   162.159.   104.21
-www.limetorrents.com    172.67.   84.32   104.21.
-www.freeanimeonline.com   76.223.  13.248
-www.torlock2.com   104.21.
-www.hentaisites.com 104.21.   
-www.iptorrents.com  104.26.   95.211.
+www.thepiratebay.org   162.159.136.0
+www.limetorrents.com    172.67.203.0
+www.freeanimeonline.com   13.248.169.0
+www.torlock2.com   104.21.96.0
+www.hentaisites.com 104.21.30.0   
+www.iptorrents.com  104.26.12.0
 
 config t
 NO ip access-list standard NOTORS
 ip access-list standard NOTORS
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
+DENY   162.159.136.0   0.0.255.255
+DENY   172.67.203.0  0.0.255.255
+DENY   13.248.169.0  0.0.255.255
+DENY   104.21.96.0  0.0.255.255
+DENY   104.21.30.0    0.0.255.255
+DENY   104.26.12.0   0.0.255.255
+
 Permit Any
 Int Gi 1
  ip access-group NOTORS in
