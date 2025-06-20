@@ -269,7 +269,9 @@ config t
 NO spanning-tree vlan 1-999
 end
 AYUSIN ULET IS @taas: AT @baba
-9
+config t
+ spanning-tree vlan 1-999
+end
 
 TASK7: HOW TO BECOME A WORLD-CLASS NETWORK ENGINEER
 SPECIALIZING IN SWITCH:
@@ -465,7 +467,7 @@ do sh int status err-disable
 Port      Name               Status       Reason               Err-disabled Vlans
 Fa0/6                        err-disabled psecure-violation
 Fa0/8                        err-disabled psecure-violation
-@baba: make it alive:
+@baba: make it alive: / restoring the switch
 config t
 Int fa0/6
 NO switchport port-security
